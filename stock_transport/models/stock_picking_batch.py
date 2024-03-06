@@ -44,5 +44,5 @@ class StockPickingBatch(models.Model):
     
     @api.depends('weight', 'volume')
     def _compute_display_name(self):
-        for category in self:
-            category.display_name = f"{category.name}: {category.weight}kg, {category.volume}m\N{SUPERSCRIPT THREE}"
+        for batch in self:
+            batch.display_name = f"{batch.name}: {batch.weight}kg, {batch.volume}m\N{SUPERSCRIPT THREE} {batch.vehicle_id.driver_id.name}"
