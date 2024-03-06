@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="fleet_dock_station_view_tree" model="ir.ui.view">
+        <field name="name">fleet.dock.station.tree</field>
+        <field name="model">fleet.dock.station</field>
+        <field name="arch" type="xml">
+            <tree string="Dock Station" editable="bottom">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="fleet_dock_station_action" model="ir.actions.act_window">
+        <field name="name">Dock</field>
+        <field name="res_model">fleet.dock.station</field>
+        <field name="view_mode">tree</field>
+    </record> 
+
+    <menuitem id="fleet_dock_station_menu"
+        parent="fleet.fleet_configuration"
+        action="fleet_dock_station_action"
+        sequence="99"/>
+
+</odoo>

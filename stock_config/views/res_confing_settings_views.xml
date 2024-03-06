@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.stock</field>
+        <field name="model">res.config.settings</field>
+        <field name="priority" eval="30"/>
+        <field name="inherit_id" ref="base.res_config_settings_view_form" />
+        <field name="arch" type="xml">
+            <block name="shipping_setting_container" position="inside">
+                <setting id="stock_transport" help="Require to add stock transport" >
+                    <field name="module_stock_transport"/>
+                </setting>
+            </block>
+        </field>
+    </record>
+
+</odoo>
