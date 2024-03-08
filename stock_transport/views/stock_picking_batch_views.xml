@@ -10,8 +10,22 @@
                 <field name="dock_id" />
                 <field name="vehicle_id" placeholder="Third Party Provider"/>
                 <field name="category_id" placeholder="eg. Semi-truck"/>
-                <field name="weight" widget="progressbar" invisible="not category_id"/>
-                <field name="volume" widget="progressbar" invisible="not category_id"/>
+                <label for='weight' string="Weight" invisible="not category_id"/>
+                <div class='d-flex flex-row gap-2' invisible="not category_id">
+                    <div class='d-flex flex-row gap-1'>
+                        <field name='weight' nolabel='1'/>
+                        <span>kg</span>
+                    </div>
+                    <field name='weight_percentage' widget='progressbar' nolabel='1' />
+                </div>
+                <label for='volume' string="Volume" invisible="not category_id"/>
+                <div class='d-flex flex-row gap-2' invisible="not category_id">
+                    <div class='d-flex flex-row gap-1'>
+                        <field name='volume' nolabel='1'/>
+                        <span >m&#179;</span>
+                    </div>
+                    <field name='volume_percentage' widget='progressbar' nolabel='1' />
+                </div>
             </xpath>
         </field>
     </record>
